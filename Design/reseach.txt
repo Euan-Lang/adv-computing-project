@@ -1,0 +1,15 @@
+https://likegeeks.com/python-gui-examples-tkinter-tutorial/
+
+https://www.geeksforgeeks.org/create-table-using-tkinter/
+
+https://stackoverflow.com/questions/44160181/tkinter-call-function-when-entry-box-is-clicked
+
+https://stackoverflow.com/questions/42187250/how-to-prevent-tkinter-window-opening-before-being-called/42187640
+
+https://stackoverflow.com/questions/45441885/how-can-i-create-a-dropdown-menu-from-a-list-in-tkinter
+
+https://effbot.org/tkinterbook/grid.htm
+
+https://subscription.packtpub.com/book/application_development/9781787129450/1/ch01lvl1sec13/setting-the-focus-to-a-widget-and-disabling-widgets
+
+https://www.mockaroo.com/

@@ -1,0 +1,207 @@
+/*------------------------------------------------------- Creates detention DB -------------------------------------------------------------- */
+CREATE DATABASE SchoolDetention;    
+/*------------------------------------------------------- Creates department table ---------------------------------------------------------- */                       
+CREATE TABLE DEPARTMENT(
+	DepartmentCode int(3) PRIMARY KEY NOT NULL,
+	DepartmentName varchar(30) NOT NULL
+);
+/*------------------------------------------------------- Creates Staff table ---------------------------------------------------------------------- */  
+CREATE TABLE STAFF(
+	StaffID int(9) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	FirstName varchar(30) NOT NULL,
+	Surname varchar(30) NOT NULL,
+	DepartmentName varchar(30) NOT NULL,
+	DepartmentCode int(3) NOT NULL,
+	Passwrd varchar(32) NOT NULL,
+	Slt bool NOT NULL,
+	Username varchar(40) NOT NULL,
+	FOREIGN KEY (DepartmentCode) REFERENCES DEPARTMENT(DepartmentCode)
+);
+/*------------------------------------------------------- Creates trigger on Staff table ---------------------------------------------------------- */  
+CREATE TRIGGER UserNameGen BEFORE INSERT ON STAFF
+	FOR EACH ROW
+		set New.Username = CONCAT(substring(new.FirstName,1,1),new.Surname,new.DepartmentCode);
+/*------------------------------------------------------- Creates Registration Class table ---------------------------------------------------------- */  
+CREATE TABLE REG(
+	RegClass varchar(3) PRIMARY KEY NOT NULL 
+);
+/*---------------------------------------------------------------  Creates Pupil table  ---------------------------------------------------------*/
+CREATE TABLE PUPIL(
+	Scn varchar(9) PRIMARY KEY NOT NULL,
+	FirstName varchar(30) NOT NULL,
+	Surname varchar(30) NOT NULL,
+	RegClass varchar(3) NOT NULL,
+	FOREIGN KEY(RegClass) REFERENCES REG(RegClass)
+);
+/*---------------------------------------------------------------  Creates Detention table  -------------------------------------------------------------*/
+CREATE TABLE DETENTION(
+	DetentionID int(9) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	DetentionDate date Not Null,
+	DetentionType ENUM("lunch","after school") NOT NULL,
+	RoomNo varchar(4) Not Null,
+	TeacherID int(9) NOT NULL,
+	FOREIGN KEY(TeacherID)REFERENCES STAFF(StaffID)
+);
+/*--------------------------------------------------------------  Creates PupilDetention table  ----------------------------------------------------------------*/
+CREATE TABLE PUPILDETENTION(
+	DetentionID int(9) NOT Null,
+	Scn varchar(9) NOT Null,
+	Reason varchar(500) NOT Null,
+	PRIMARY KEY(DetentionID,Scn),
+	FOREIGN KEY(DetentionID)REFERENCES DETENTION(DetentionID),
+	FOREIGN KEY(Scn)REFERENCES PUPIL(Scn)
+);
+/*------------------------------------------------------- Inserts predefined department data ---------------------------------------------------------- */  
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(121,"modern languages");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(311,"FICT");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(211,"technical");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(221,"Science");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(111,"CDU");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(112,"ASN");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(113,"performing arts");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(122,"mathematics");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(231,"Home Economics");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(321,"Physical Education");
+INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
+VALUES(131,"Social Subjects");
+
+
+/*------------------------------------------------------- Inserts predefined Staff data ---------------------------------------------------------- */  
+INSERT INTO STAFF(FirstName,Surname,DepartmentName,DepartmentCode,Passwrd)
+VALUES("Eaun","Lang","FICT",311,"5f4dcc3b5aa765d61d8327deb882cf99");
+
+
+/*------------------------------------------------------- Inserts predefined Registration Class data ---------------------------------------------------------- */  
+INSERT INTO REG(RegClass)
+VALUES("1B1");
+INSERT INTO REG(RegClass)
+VALUES("1B2");
+INSERT INTO REG(RegClass)
+VALUES("1B3");
+INSERT INTO REG(RegClass)
+VALUES("2B1");
+INSERT INTO REG(RegClass)
+VALUES("2B2");
+INSERT INTO REG(RegClass)
+VALUES("2B3");
+INSERT INTO REG(RegClass)
+VALUES("3B1");
+INSERT INTO REG(RegClass)
+VALUES("3B2");
+INSERT INTO REG(RegClass)
+VALUES("3B3");
+INSERT INTO REG(RegClass)
+VALUES("4B1");
+INSERT INTO REG(RegClass)
+VALUES("4B2");
+INSERT INTO REG(RegClass)
+VALUES("4B3");
+INSERT INTO REG(RegClass)
+VALUES("5B1");
+INSERT INTO REG(RegClass)
+VALUES("5B2");
+INSERT INTO REG(RegClass)
+VALUES("5B3");
+INSERT INTO REG(RegClass)
+VALUES("6B1");
+INSERT INTO REG(RegClass)
+VALUES("6B2");
+INSERT INTO REG(RegClass)
+VALUES("6B3");
+
+INSERT INTO REG(RegClass)
+VALUES("1C1");
+INSERT INTO REG(RegClass)
+VALUES("1C2");
+INSERT INTO REG(RegClass)
+VALUES("1C3");
+INSERT INTO REG(RegClass)
+VALUES("2C1");
+INSERT INTO REG(RegClass)
+VALUES("2C2");
+INSERT INTO REG(RegClass)
+VALUES("2C3");
+INSERT INTO REG(RegClass)
+VALUES("3C1");
+INSERT INTO REG(RegClass)
+VALUES("3C2");
+INSERT INTO REG(RegClass)
+VALUES("3C3");
+INSERT INTO REG(RegClass)
+VALUES("4C1");
+INSERT INTO REG(RegClass)
+VALUES("4C2");
+INSERT INTO REG(RegClass)
+VALUES("4C3");
+INSERT INTO REG(RegClass)
+VALUES("5C1");
+INSERT INTO REG(RegClass)
+VALUES("5C2");
+INSERT INTO REG(RegClass)
+VALUES("5C3");
+INSERT INTO REG(RegClass)
+VALUES("6C1");
+INSERT INTO REG(RegClass)
+VALUES("6C2");
+INSERT INTO REG(RegClass)
+VALUES("6C3");
+
+INSERT INTO REG(RegClass)
+VALUES("1D1");
+INSERT INTO REG(RegClass)
+VALUES("1D2");
+INSERT INTO REG(RegClass)
+VALUES("2D1");
+INSERT INTO REG(RegClass)
+VALUES("2D2");
+INSERT INTO REG(RegClass)
+VALUES("2D3");
+INSERT INTO REG(RegClass)
+VALUES("3D2");
+INSERT INTO REG(RegClass)
+VALUES("4D1");
+INSERT INTO REG(RegClass)
+VALUES("4D2");
+INSERT INTO REG(RegClass)
+VALUES("5D1");
+INSERT INTO REG(RegClass)
+VALUES("5D2");
+INSERT INTO REG(RegClass)
+VALUES("6D1");
+INSERT INTO REG(RegClass)
+VALUES("6D2");
+
+/*-----------------------------------------------------------  Inserts Predefined pupil data  (test to be removed)  --------------------------------------------*/
+INSERT INTO PUPIL(Scn,FirstName,Surname,RegClass)
+VALUES("091215047","Euan Harrison","Lang","6D1");
+
+
+/*------------------------------------------------------------  Inserts Predefined detention data  (test to be removed)  -------------------------------------------*/
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-11-04","lunch",3,"A117");
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-11-30","lunch",3,"A118");
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-11-30","after school",3,"A117");
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-12-10","lunch",3,"C007");
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-12-10","after school",3,"A117");
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-12-04","lunch",3,"B101");
+INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
+VALUES("2020-12-04","after school",3,"A205");
+
+/*----------------------------------------------------------------  Inserts predefined PupilDetenton records  (test to be removed)  ------------------------------*/
+INSERT INTO PUPILDETENTION(DetentionID,Scn,Reason)
+VALUES(1,"091215047","Swearing");

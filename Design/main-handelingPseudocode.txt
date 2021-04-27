@@ -1,0 +1,6 @@
+1.1 - Import Login module
+1.2 - import options module
+
+2 - define variable userDetails that launches login function from login module and receives the users staffID
+
+2.1 - check there is a data in userdetails and the launch launchOptions function from options module passing user details
