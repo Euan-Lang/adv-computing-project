@@ -38,4 +38,34 @@
 
 3.1.3.1 - return value in current objects detentionType variable
 
-3.1.4 - 
+3.1.4 - DEFINE getRoomNo passing in self(object of DetentionRecord) on call
+
+3.1.4.1 - return value in current objects roomNo variable
+
+3.1.5 - DEFINE getTeacherID passing in self(object of DetentionRecord) on call
+
+3.1.5.1 - return value in current objects teacherID variable
+
+4.1 - DEFINE CLASS PupilDetentionRecord (detentionID as int, scn as string, reason as string)
+
+4.1.1 - DEFINE getDetentionID passing in self(object of PupilDetentionRecord) on call
+
+4.1.1.1 - return value in current objects detentionID variable
+
+4.1.2 - DEFINE getScn passing in self(object of PupilDetentionRecord) on call
+
+4.1.2.1 - return value in current objects scn variable
+
+4.1.3 - DEFINE getReason passing in self(object of PupilDetentionRecord) on call
+
+4.1.3.1 - return value in current objects reason variable
+
+5.1 - DEFINE CLASS Staff (stafID as int, Firstname as string, surname as string, departmentName as string)
+
+5.1.1 - DEFINE getStaffID passing in self(object of Staff) on call
+
+5.1.1.1 - return value in current objects staffID variable
+
+
+
+
