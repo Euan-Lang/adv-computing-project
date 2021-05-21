@@ -103,24 +103,39 @@
 
 6.1.3.5.3 - Call updatePupilDrowdown passing in pupilNames on call
 
-6.1.4 - DEFINE FUNCTION updatePupilDrowdown passing in pupilNames on call
+6.1.3.6 - DEFINE FUNCTION updatePupilDrowdown passing in pupilNames on call
 
-6.1.4.1 - update list of pupils to display
+6.1.3.6.1 - update list of pupils to display
 
-6.1.5 - DEFINE FUNCTION getAvailableDetentions passing in (empty array detentions {this will be a list of the class instances of DetentionRecord}),(empty array detentionDates {this will hold concatinated dates and times for the purpose of displaying them})
+6.1.3.7 - DEFINE FUNCTION getAvailableDetentions passing in (empty array detentions {this will be a list of the class instances of DetentionRecord}),(empty array detentionDates {this will hold concatinated dates and times for the purpose of displaying them})
 
-6.1.5.1 - SET detentions To result of FUNCTION returnAllDetentions passing DetentionRecord CLASS on call
+6.1.3.7.1 - SET detentions To result of FUNCTION returnAllDetentions passing DetentionRecord CLASS on call
 
-6.1.5.2 - SET detentions TO result of FUNCTION insertionSortDates passing in detentions on call
+6.1.3.7.2 - SET detentions TO result of FUNCTION insertionSortDates passing in detentions on call
 
-6.1.5.3 - SET detentionDates to corrisponding Date,type and roomNo from detentions
+6.1.3.7.3 - SET detentionDates to corrisponding Date,type and roomNo from detentions
 
-6.1.6 - DEFINE FUNCTION addPupilDetention passing in regclass,pupilName,reason,dateTime,CLASS PupilDetentionRecord on call
+6.1.3.8 - DEFINE FUNCTION addPupilDetention passing in regclass,pupilName,reason,dateTime,CLASS PupilDetentionRecord on call
 
-6.1.6.1 - split dateTime into seperate variables
+6.1.3.8.1 - split dateTime into seperate variables
 
-6.1.6.2 - Run Query 'SELECT detentionID FROM Detention WHERE DetentionDate = "{Given date}" AND DetentionType = "{Given Time}"'
+6.1.3.8.2 - Run Query 'SELECT detentionID FROM Detention WHERE DetentionDate = "{Given date}" AND DetentionType = "{Given Time}"' and store result to detentionID
 
+6.1.3.8.3 - run query 'SELECT Scn FROM Pupil WHERE RegClass = "{Given RegClass}" AND FirstName = "{pupilFirstName}" AND Surname = "{pupilSurname}" '
+
+6.1.3.8.4 - use data given in 6.1.6.2 and 6.1.6.3 to create instance of PupilDetentionRecord passing in (detentionID,scn,reason)
+
+6.1.3.8.5 - inser this into DB
+
+6.1.3.9 - Code used to display window/form 
+
+6.1.3.10 - when form button is clicked call addPupilDetention at 6.1.6
+
+6.1.4 - DEFINE Function searchRecordsByPupil passing in nothing on call
+
+6.1.4.1 - retrieve regClass and pupilName
+
+6.1.4.2 - 
 
 
 
