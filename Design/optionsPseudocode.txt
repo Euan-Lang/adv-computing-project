@@ -141,7 +141,17 @@
 
 6.1.4.4 - Update Dropdown menu with pupilnames data
 
-6.1.4.6 - DEFINE FUNCTION DisplayPupil passing in Class RegClass
+6.1.4.6 - DEFINE FUNCTION DisplayPupil passing in (Class RegClass, pupilName, Class PupilRecord)
+
+6.1.4.6.1 - query All relivant data from DB (Date,type,reason.roomNo,teacher)
+
+6.1.4.6.2 - Call Function DisplayPupilsOnDetention passing in relevant Data from 6.1.4.6.1
+
+6.1.4.7 - When form submit button is clicked call SearchRecordsByPupil passing nothing on call
+
+6.1.5.1 - DEFINE FUNCTION DisplayPupilsOnDetention passing in (pupildetentionHitory as array of Class PupilDetentionRecord, detentions as array of Class DetentionRecord, staff as aray of Class Staff)
+
+6.1.5.2 - Display data to user
 
 
 
