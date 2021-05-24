@@ -133,9 +133,17 @@
 
 6.1.4 - DEFINE Function searchRecordsByPupil passing in nothing on call
 
-6.1.4.1 - retrieve regClass and pupilName
+6.1.4.1 - retrieve regClass and pupilName from form
 
-6.1.4.2 - 
+6.1.4.2 - search DB for pupil with given name and regclass
+
+6.1.4.3 - Set results of 6.1.4.2 to pupils and corrisponding Fullnames to pupil names
+
+6.1.4.4 - Update Dropdown menu with pupilnames data
+
+6.1.4.6 - DEFINE FUNCTION DisplayPupil passing in Class RegClass
+
+
 
 
 
