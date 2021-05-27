@@ -1,1 +1,9 @@
+For My Project I plan to use MD5 to encrypt password data on the database to ensure that the user accounts are secure if the database is compromised. In python this involves the hashlib libary.
+To use the hashing algorithm first the text must be converted into binary bytes as that is what the MD5 algorithm input accepts.
+Second the hashlib.md5("text to hash") is called with the bytes of data to be hashed in the brackets.
+Then Using the md5.hexdigest("result of line 3/step 2") function will return a 32 character long hexidecimal string that can be stored.
 
+This is why you never really check if a password is correct you compare the hash values that are stored with the hash of the user inputed password.
+
+https://docs.python.org/3/library/hashlib.html
+https://stackoverflow.com/
