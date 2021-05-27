@@ -153,6 +153,12 @@
 
 6.1.5.2 - Display data to user
 
+6.1.6.1 - DEFINE openNewWindow passing in cothing on call
+
+6.1.6.2 - DISPLAY welcome message and buttons:
+          SetDetention : Calls SetDetention from 6.1.3
+          SearchRecordsByPupil : Calls SearchRecordsByPupil from 6.1.4
+
 
 
 
