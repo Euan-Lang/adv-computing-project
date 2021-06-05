@@ -2,19 +2,39 @@ The following query is used to return relivant staff data given a username and M
     SELECT StaffID, FirstName, Surname, DepartmentName, DepartmentCode, Username, Slt 
     FROM STAFF 
     WHERE Username = \"{username}\" AND Passwrd = \"{PassHash}\";
+
 The following query is used to return all pupil data with a given regclass:
     SELECT * 
     FROM pupil 
     WHERE RegClass = \"{queryValue}\";
+
 The following query is used to return all detention data within a given date range:
     SELECT * 
     FROM Detention 
     WHERE DetentionDate >=\"{currentDate}\" AND DetentionDate <= \"{maxDate}\";
+
 The following query is used to find the detentionID given a time/date and type:
     SELECT detentionID 
     FROM Detention 
     WHERE DetentionDate = \"{dateTime[0]}\" AND DetentionType = \"{dateTime[1]}\";
+
 The following query is used to find scn of a pupil fiven their fullname and regclass:
     SELECT Scn 
     FROM Pupil 
     WHERE RegClass = \"{regClass.get()}\" AND FirstName = \"{pupilFirstName}\" AND Surname = \"{pupilSurname}\";
+
+The following query is used to add a new record of an assigned detention:
+    INSERT INTO pupildetention (DetentionID,Scn,Reason) 
+    VALUES (\"{DetentionID}\" , \"{Scn}\" , \"{Reason}\" );
+    
+The following query is used to find all instances of detentions given to a pupil:
+    SELECT * 
+    FROM pupildetention 
+    WHERE scn = "{Scn}";
+    
+The following query is used to find detention data given a detentionID:
+    SELECT * 
+    FROM detention 
+    WHERE DetentionID = "{DetentionID}";
+    
+The following query is used to find all relevant 
