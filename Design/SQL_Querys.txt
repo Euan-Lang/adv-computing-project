@@ -1,4 +1,4 @@
-The following query is used to return relivant staff data given a username and MD5 hash of a password:
+The following query is used to return relevant staff data given a username and MD5 hash of a password:
     SELECT StaffID, FirstName, Surname, DepartmentName, DepartmentCode, Username, Slt 
     FROM STAFF 
     WHERE Username = \"{username}\" AND Passwrd = \"{PassHash}\";
@@ -37,4 +37,7 @@ The following query is used to find detention data given a detentionID:
     FROM detention 
     WHERE DetentionID = "{DetentionID}";
     
-The following query is used to find all relevant 
+The following query is used to find all relevant staff data given staffID:
+    SELECT StaffID , FirstName , Surname , DepartmentName 
+    FROM staff 
+    WHERE StaffID ="{StaffID}";
