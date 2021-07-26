@@ -76,11 +76,6 @@ INSERT INTO DEPARTMENT(DepartmentCode,DepartmentName)
 VALUES(131,"Social Subjects");
 
 
-/*------------------------------------------------------- Inserts predefined Staff data ---------------------------------------------------------- */  
-INSERT INTO STAFF(FirstName,Surname,DepartmentName,DepartmentCode,Passwrd)
-VALUES("Eaun","Lang","FICT",311,"5f4dcc3b5aa765d61d8327deb882cf99");
-
-
 /*------------------------------------------------------- Inserts predefined Registration Class data ---------------------------------------------------------- */  
 INSERT INTO REG(RegClass)
 VALUES("1B1");
@@ -181,27 +176,3 @@ VALUES("6D1");
 INSERT INTO REG(RegClass)
 VALUES("6D2");
 
-/*-----------------------------------------------------------  Inserts Predefined pupil data  (test to be removed)  --------------------------------------------*/
-INSERT INTO PUPIL(Scn,FirstName,Surname,RegClass)
-VALUES("091215047","Euan Harrison","Lang","6D1");
-
-
-/*------------------------------------------------------------  Inserts Predefined detention data  (test to be removed)  -------------------------------------------*/
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-11-04","lunch",3,"A117");
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-11-30","lunch",3,"A118");
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-11-30","after school",3,"A117");
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-12-10","lunch",3,"C007");
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-12-10","after school",3,"A117");
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-12-04","lunch",3,"B101");
-INSERT INTO DETENTION(DetentionDate,DetentionType,TeacherID,RoomNo)
-VALUES("2020-12-04","after school",3,"A205");
-
-/*----------------------------------------------------------------  Inserts predefined PupilDetenton records  (test to be removed)  ------------------------------*/
-INSERT INTO PUPILDETENTION(DetentionID,Scn,Reason)
-VALUES(1,"091215047","Swearing");
